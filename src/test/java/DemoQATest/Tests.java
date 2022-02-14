@@ -175,7 +175,6 @@ public class Tests extends BasePage {
 
     @Test(priority = 90)
     public void uploadAdnDownloadPicture() throws InterruptedException {
-        //uploadPicture.sendKeys("C:\\Users\\Home\\Desktop\\ethernaltime.png");
         goToElementsPage();
         String expectedURL = excelReader.getStringData("URL", 17, 1);
         String pathFileMsg = "C:\\fakepath\\itbootcamp.png";
@@ -184,7 +183,9 @@ public class Tests extends BasePage {
         elementsPage.uploadDownloadMenu.click();
         Thread.sleep(1500);
         scroll(elementsPage.uploadFileBttn);
-        elementsPage.uploadFileBttn.sendKeys("F:\\IT\\QA ITBootcamp\\JAVA\\DemoQA\\itbootcamp.png");
+        // iz nekog razloga Selenium ovde ne radi lepo upload pic sem sa apsolutnom putanjom i test onda pada ukoliko se slika ne nalazi na desktopu
+        // ne moeze se odraditi upload pic ni iz root projekta
+        elementsPage.uploadFileBttn.sendKeys("C:\\Users\\Home\\Desktop\\itbootcamp.png");/*https://itbootcamp.rs/wp-content/uploads/2019/08/logo_itbootcamp_400x400.png*/
         Thread.sleep(1500);
         elementsPage.donwloadBttn.click();
 
