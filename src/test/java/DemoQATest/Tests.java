@@ -183,9 +183,9 @@ public class Tests extends BasePage {
         elementsPage.uploadDownloadMenu.click();
         Thread.sleep(1500);
         scroll(elementsPage.uploadFileBttn);
-        // iz nekog razloga Selenium ovde ne radi lepo upload pic sem sa apsolutnom putanjom i test onda pada ukoliko se slika ne nalazi na desktopu
-        // ne moeze se odraditi upload pic ni iz root projekta
-        elementsPage.uploadFileBttn.sendKeys("C:\\Users\\Home\\Desktop\\itbootcamp.png");/*https://itbootcamp.rs/wp-content/uploads/2019/08/logo_itbootcamp_400x400.png*/
+        // iz nekog razloga Selenium ovde ne radi lepo upload pic sem sa apsolutnom putanjom i test onda pada ukoliko se slika ne nalazi na C: , tako da bi trebalo fotografiju kopirati na C: da bi test prosao
+        // ne moze se odraditi upload pic ni iz root projekta "itbootcamp.png"
+        elementsPage.uploadFileBttn.sendKeys("C:\\itbootcamp.png");/*https://itbootcamp.rs/wp-content/uploads/2019/08/logo_itbootcamp_400x400.png*/
         Thread.sleep(1500);
         elementsPage.donwloadBttn.click();
 
